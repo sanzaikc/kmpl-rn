@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "kmpl",
+    "slug": "kmpl",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
