@@ -7,31 +7,35 @@ import {
   FormControl,
   Heading,
   HStack,
+  Icon,
   Input,
   Link,
   VStack,
 } from "native-base";
+import { MaterialIcons } from "@expo/vector-icons";
 
 export default function LoginScreen() {
+  const [show, setShow] = React.useState(false);
+
   return (
     <Center h="100%" w="100%">
       <Box safeArea p="2" py="8" w="90%">
         <Heading
           size="lg"
           fontWeight="600"
-          color="primary.800"
+          color="coolGray.800"
           _dark={{
-            color: "primary.50",
+            color: "coolGray.50",
           }}
         >
           Welcome
         </Heading>
         <Heading
           mt="1"
+          color="coolGray.600"
           _dark={{
-            color: "primary.200",
+            color: "coolGray.200",
           }}
-          color="primary.600"
           fontWeight="medium"
           size="xs"
         >
@@ -40,44 +44,59 @@ export default function LoginScreen() {
 
         <VStack space={3} mt="5">
           <FormControl>
-            <FormControl.Label>Email ID</FormControl.Label>
+            <FormControl.Label>Username</FormControl.Label>
             <Input />
           </FormControl>
           <FormControl>
             <FormControl.Label>Password</FormControl.Label>
-            <Input type="password" />
+            <Input
+              type={show ? "text" : "password"}
+              InputRightElement={
+                <Icon
+                  as={
+                    <MaterialIcons
+                      name={show ? "visibility" : "visibility-off"}
+                    />
+                  }
+                  size={5}
+                  mr="2"
+                  color="muted.400"
+                  onPress={() => setShow(!show)}
+                />
+              }
+            />
             <Link
               _text={{
                 fontSize: "xs",
                 fontWeight: "500",
-                color: "indigo.500",
+                color: "coolGray.500",
               }}
               alignSelf="flex-end"
-              mt="1"
+              mt="2"
             >
-              Forget Password?
+              Forgot Password?
             </Link>
           </FormControl>
-          <Button mt="2" colorScheme="indigo">
+          <Button mt="2" colorScheme="rose" py={3}>
             Sign in
           </Button>
           <HStack mt="6" justifyContent="center">
             <Text
               fontSize="sm"
-              color="secondary.600"
+              color="coolGray.600"
               _dark={{
-                color: "primary.200",
+                color: "coolGray.200",
               }}
             >
               I'm a new user.{" "}
             </Text>
             <Link
               _text={{
-                color: "indigo.500",
+                color: "coolGray.500",
                 fontWeight: "medium",
                 fontSize: "sm",
               }}
-              href="#"
+              // href="#"
             >
               Sign Up
             </Link>
