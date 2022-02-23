@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text } from "react-native";
+import { Text } from "react-native";
 import {
   Box,
   Button,
@@ -16,6 +16,32 @@ import { MaterialIcons } from "@expo/vector-icons";
 
 export default function LoginScreen() {
   const [show, setShow] = React.useState(false);
+  const [formData, setData] = React.useState({});
+  const [errors, setErrors] = React.useState({});
+
+  const validate = () => {
+    if (formData.username === undefined) {
+      setErrors({ ...errors, username: "Username is required" });
+      return false;
+    } else if (formData.username.length < 3) {
+      setErrors({ ...errors, username: "Username is too short" });
+      return false;
+    }
+
+    if (formData.password === undefined) {
+      setErrors({ ...errors, password: "Password is required" });
+      return false;
+    } else if (formData.password.length < 8) {
+      setErrors({ ...errors, password: "Password is too short" });
+      return false;
+    }
+
+    return true;
+  };
+
+  const onSubmit = () => {
+    validate() ? setErrors({}) : console.log("Validation Failed");
+  };
 
   return (
     <Center h="100%" w="100%">
@@ -43,11 +69,20 @@ export default function LoginScreen() {
         </Heading>
 
         <VStack space={3} mt="5">
-          <FormControl>
+          <FormControl isRequired isInvalid={"username" in errors}>
             <FormControl.Label>Username</FormControl.Label>
-            <Input />
+            <Input
+              onChangeText={(value) =>
+                setData({ ...formData, username: value })
+              }
+            />
+            {"username" in errors && (
+              <FormControl.ErrorMessage>
+                {errors["username"]}
+              </FormControl.ErrorMessage>
+            )}
           </FormControl>
-          <FormControl>
+          <FormControl isRequired isInvalid={"password" in errors}>
             <FormControl.Label>Password</FormControl.Label>
             <Input
               type={show ? "text" : "password"}
@@ -64,20 +99,28 @@ export default function LoginScreen() {
                   onPress={() => setShow(!show)}
                 />
               }
+              onChangeText={(value) =>
+                setData({ ...formData, password: value })
+              }
             />
-            <Link
-              _text={{
-                fontSize: "xs",
-                fontWeight: "500",
-                color: "coolGray.500",
-              }}
-              alignSelf="flex-end"
-              mt="2"
-            >
-              Forgot Password?
-            </Link>
+            {"password" in errors && (
+              <FormControl.ErrorMessage>
+                {errors["password"]}
+              </FormControl.ErrorMessage>
+            )}
           </FormControl>
-          <Button mt="2" colorScheme="rose" py={3}>
+          <Link
+            _text={{
+              fontSize: "xs",
+              fontWeight: "500",
+              color: "coolGray.500",
+            }}
+            alignSelf="flex-end"
+            mt="2"
+          >
+            Forgot Password?
+          </Link>
+          <Button mt="2" colorScheme="rose" py={3} onPress={onSubmit}>
             Sign in
           </Button>
           <HStack mt="6" justifyContent="center">
@@ -106,5 +149,3 @@ export default function LoginScreen() {
     </Center>
   );
 }
-
-const styles = StyleSheet.create({});
