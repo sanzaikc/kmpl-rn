@@ -1,11 +1,12 @@
-import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+
+import Container from "../components/shared/Container";
 
 export default function LoginScreen() {
   return (
-    <View>
+    <Container>
       <Text>LoginScreen</Text>
-    </View>
+    </Container>
   );
 }
 
