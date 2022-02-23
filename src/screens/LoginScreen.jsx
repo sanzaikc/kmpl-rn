@@ -15,9 +15,9 @@ import {
 import { MaterialIcons } from "@expo/vector-icons";
 
 export default function LoginScreen() {
-  const [show, setShow] = React.useState(false);
   const [formData, setData] = React.useState({});
   const [errors, setErrors] = React.useState({});
+  const [show, setShow] = React.useState(false);
 
   const validate = () => {
     if (formData.username === undefined) {
