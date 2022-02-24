@@ -116,7 +116,6 @@ export default function LoginScreen() {
               color: "coolGray.500",
             }}
             alignSelf="flex-end"
-            mt="2"
           >
             Forgot Password?
           </Link>
