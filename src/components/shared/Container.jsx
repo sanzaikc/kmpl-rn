@@ -1,15 +1,10 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { Box } from "native-base";
 
 export default function Container({ children }) {
-  return <View style={styles.container}>{children}</View>;
+  return (
+    <Box h="100%" w="90%" px="4" py="2">
+      {children}
+    </Box>
+  );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

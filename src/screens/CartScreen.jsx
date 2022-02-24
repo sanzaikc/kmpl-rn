@@ -1,11 +1,13 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text } from "react-native";
 import React from "react";
+
+import Container from "../components/shared/Container";
 
 export default function CartScreen() {
   return (
-    <View>
-      <Text>CartScreen</Text>
-    </View>
+    <Container>
+      <Text>Cart Screen</Text>
+    </Container>
   );
 }
 
