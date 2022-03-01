@@ -18,6 +18,7 @@ export default function LoginScreen() {
   const [formData, setData] = React.useState({});
   const [errors, setErrors] = React.useState({});
   const [show, setShow] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
 
   const validate = () => {
     if (formData.username === undefined) {
@@ -40,7 +41,15 @@ export default function LoginScreen() {
   };
 
   const onSubmit = () => {
-    validate() ? setErrors({}) : console.log("Validation Failed");
+    validate() ? handleLogin() : console.log("Validation Failed");
+  };
+
+  const handleLogin = () => {
+    setErrors({});
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
   };
 
   return (
@@ -72,6 +81,7 @@ export default function LoginScreen() {
           <FormControl isRequired isInvalid={"username" in errors}>
             <FormControl.Label>Username</FormControl.Label>
             <Input
+              isDisabled={loading}
               onChangeText={(value) =>
                 setData({ ...formData, username: value })
               }
@@ -85,6 +95,7 @@ export default function LoginScreen() {
           <FormControl isRequired isInvalid={"password" in errors}>
             <FormControl.Label>Password</FormControl.Label>
             <Input
+              isDisabled={loading}
               type={show ? "text" : "password"}
               InputRightElement={
                 <Icon
@@ -119,7 +130,23 @@ export default function LoginScreen() {
           >
             Forgot Password?
           </Link>
-          <Button mt="2" colorScheme="rose" py={3} onPress={onSubmit}>
+          <Button
+            mt="2"
+            py={3}
+            colorScheme="rose"
+            isLoading={loading}
+            isLoadingText="Signing in..."
+            _loading={{
+              bg: "rose.400:alpha.70",
+              _text: {
+                color: "white",
+              },
+            }}
+            _spinner={{
+              color: "white",
+            }}
+            onPress={onSubmit}
+          >
             Sign in
           </Button>
           <HStack mt="6" justifyContent="center">
