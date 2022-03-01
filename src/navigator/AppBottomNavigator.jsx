@@ -4,7 +4,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import HomeScreen from "../screens/HomeScreen";
 import CartScreen from "../screens/CartScreen";
-import UserStack from "./UserStack";
+import AuthStack from "./AuthStack";
 
 const Tab = createBottomTabNavigator();
 
@@ -44,7 +44,7 @@ export default function AppBottomNavigator() {
       />
       <Tab.Screen
         name="User"
-        component={UserStack}
+        component={AuthStack}
         options={{
           headerShown: false,
           tabBarIcon: ({ color, size }) => (

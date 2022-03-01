@@ -16,40 +16,20 @@ import { MaterialIcons } from "@expo/vector-icons";
 
 export default function LoginScreen() {
   const [formData, setData] = React.useState({});
-  const [errors, setErrors] = React.useState({});
+  //   const [errors, setErrors] = React.useState({});
   const [show, setShow] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
 
-  const validate = () => {
-    if (formData.username === undefined) {
-      setErrors({ ...errors, username: "Username is required" });
-      return false;
-    } else if (formData.username.length < 3) {
-      setErrors({ ...errors, username: "Username is too short" });
-      return false;
-    }
-
-    if (formData.password === undefined) {
-      setErrors({ ...errors, password: "Password is required" });
-      return false;
-    } else if (formData.password.length < 8) {
-      setErrors({ ...errors, password: "Password is too short" });
-      return false;
-    }
-
-    return true;
-  };
-
   const onSubmit = () => {
-    validate() ? handleLogin() : console.log("Validation Failed");
+    handleSignUp();
+    // validate() ? handleSignUp() : console.log("Validation Failed");
   };
 
-  const handleLogin = () => {
-    setErrors({});
+  const handleSignUp = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 3000);
   };
 
   return (
@@ -74,11 +54,11 @@ export default function LoginScreen() {
           fontWeight="medium"
           size="xs"
         >
-          Sign in to continue!
+          Sign up to continue!
         </Heading>
 
         <VStack space={3} mt="5">
-          <FormControl isRequired isInvalid={"username" in errors}>
+          <FormControl>
             <FormControl.Label>Username</FormControl.Label>
             <Input
               isDisabled={loading}
@@ -86,13 +66,15 @@ export default function LoginScreen() {
                 setData({ ...formData, username: value })
               }
             />
-            {"username" in errors && (
-              <FormControl.ErrorMessage>
-                {errors["username"]}
-              </FormControl.ErrorMessage>
-            )}
           </FormControl>
-          <FormControl isRequired isInvalid={"password" in errors}>
+          <FormControl>
+            <FormControl.Label>Email</FormControl.Label>
+            <Input
+              isDisabled={loading}
+              onChangeText={(value) => setData({ ...formData, email: value })}
+            />
+          </FormControl>
+          <FormControl>
             <FormControl.Label>Password</FormControl.Label>
             <Input
               isDisabled={loading}
@@ -114,22 +96,30 @@ export default function LoginScreen() {
                 setData({ ...formData, password: value })
               }
             />
-            {"password" in errors && (
-              <FormControl.ErrorMessage>
-                {errors["password"]}
-              </FormControl.ErrorMessage>
-            )}
           </FormControl>
-          <Link
-            _text={{
-              fontSize: "xs",
-              fontWeight: "500",
-              color: "coolGray.500",
-            }}
-            alignSelf="flex-end"
-          >
-            Forgot Password?
-          </Link>
+          <FormControl>
+            <FormControl.Label>Confirm Password</FormControl.Label>
+            <Input
+              isDisabled={loading}
+              type={show ? "text" : "password"}
+              InputRightElement={
+                <Icon
+                  as={
+                    <MaterialIcons
+                      name={show ? "visibility" : "visibility-off"}
+                    />
+                  }
+                  size={5}
+                  mr="2"
+                  color="muted.400"
+                  onPress={() => setShow(!show)}
+                />
+              }
+              onChangeText={(value) =>
+                setData({ ...formData, confirmPassword: value })
+              }
+            />
+          </FormControl>
           <Button
             mt="2"
             py={3}
@@ -147,7 +137,7 @@ export default function LoginScreen() {
             }}
             onPress={onSubmit}
           >
-            Sign in
+            Sign Up
           </Button>
           <HStack mt="6" justifyContent="center">
             <Text
@@ -157,7 +147,7 @@ export default function LoginScreen() {
                 color: "coolGray.200",
               }}
             >
-              I'm a new user.{" "}
+              Already registered?.{" "}
             </Text>
             <Link
               _text={{
@@ -165,9 +155,9 @@ export default function LoginScreen() {
                 fontWeight: "medium",
                 fontSize: "sm",
               }}
-              // href="#"
+              onPress={() => {}}
             >
-              Sign Up
+              Sign In
             </Link>
           </HStack>
         </VStack>
