@@ -9,7 +9,6 @@ import routes from "./routes";
 const Stack = createStackNavigator();
 
 export default function AuthStack() {
-  console.log(routes);
   return (
     <Stack.Navigator
       screenOptions={{
@@ -17,7 +16,7 @@ export default function AuthStack() {
       }}
     >
       <Stack.Screen name={routes.SIGN_IN} component={SignInScreeen} />
-      <Stack.Screen name={routes.SIGN_OUT} component={SignUpScreen} />
+      <Stack.Screen name={routes.SIGN_UP} component={SignUpScreen} />
     </Stack.Navigator>
   );
 }

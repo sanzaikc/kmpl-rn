@@ -13,8 +13,9 @@ import {
   VStack,
 } from "native-base";
 import { MaterialIcons } from "@expo/vector-icons";
+import routes from "../navigator/routes";
 
-export default function SignInScreeen() {
+export default function SignInScreeen({ navigation }) {
   const [formData, setData] = React.useState({});
   const [errors, setErrors] = React.useState({});
   const [show, setShow] = React.useState(false);
@@ -165,7 +166,7 @@ export default function SignInScreeen() {
                 fontWeight: "medium",
                 fontSize: "sm",
               }}
-              onPress={() => {}}
+              onPress={() => navigation.navigate(routes.SIGN_UP)}
             >
               Sign Up
             </Link>

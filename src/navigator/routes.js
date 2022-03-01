@@ -4,7 +4,7 @@ export default Object.freeze({
 
   // Screens
   SIGN_IN: "Sign In",
-  SIGN_OUT: "Sign Out",
+  SIGN_UP: "Sign Up",
   HOME: "Home",
   CART: "Cart",
 });
