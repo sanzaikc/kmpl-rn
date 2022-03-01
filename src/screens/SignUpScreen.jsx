@@ -148,7 +148,7 @@ export default function SignUpScreen({ navigation }) {
                 color: "coolGray.200",
               }}
             >
-              Already registered?.{" "}
+              Already registered?{" "}
             </Text>
             <Link
               _text={{
