@@ -126,7 +126,7 @@ export default function SignUpScreen({ navigation }) {
             py={3}
             colorScheme="rose"
             isLoading={loading}
-            isLoadingText="Signing in..."
+            isLoadingText="Signing up..."
             _loading={{
               bg: "rose.400:alpha.70",
               _text: {
