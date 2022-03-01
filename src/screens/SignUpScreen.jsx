@@ -14,15 +14,15 @@ import {
 } from "native-base";
 import { MaterialIcons } from "@expo/vector-icons";
 
-export default function LoginScreen() {
+export default function SignUpScreen() {
   const [formData, setData] = React.useState({});
   //   const [errors, setErrors] = React.useState({});
   const [show, setShow] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
 
   const onSubmit = () => {
-    handleSignUp();
     // validate() ? handleSignUp() : console.log("Validation Failed");
+    handleSignUp();
   };
 
   const handleSignUp = () => {

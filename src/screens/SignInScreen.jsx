@@ -14,7 +14,7 @@ import {
 } from "native-base";
 import { MaterialIcons } from "@expo/vector-icons";
 
-export default function LoginScreen() {
+export default function SignInScreeen() {
   const [formData, setData] = React.useState({});
   const [errors, setErrors] = React.useState({});
   const [show, setShow] = React.useState(false);
