@@ -14,7 +14,7 @@ import {
 
 export default function ProductCard() {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity style={{ width: "100%" }}>
       <Box
         bg="white"
         overflow="hidden"

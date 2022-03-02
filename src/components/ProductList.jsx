@@ -13,15 +13,17 @@ export default function ProductList() {
       data={randomArray}
       keyExtractor={({ id }) => id.toString()}
       renderItem={(_) => (
-        <View style={{ width: "50%", marginBottom: 10, marginHorizontal: 5 }}>
+        <View style={{ width: "48%", marginHorizontal: 2, marginVertical: 5 }}>
           <ProductCard />
         </View>
       )}
       numColumns={2}
       columnWrapperStyle={{
-        flex: 1,
         justifyContent: "space-between",
       }}
+      ItemSeparatorComponent={() => (
+        <View style={{ width: 16, backgroundColor: "pink" }} />
+      )}
     />
   );
 }
