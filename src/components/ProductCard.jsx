@@ -30,7 +30,7 @@ export default function ProductCard() {
         //   backgroundColor: "gray.50",
         // }}
       >
-        <Box>
+        <Box maxHeight={200} overflow="hidden">
           <AspectRatio w="100%" ratio={4 / 5}>
             <Image
               source={{
