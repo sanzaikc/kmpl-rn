@@ -13,7 +13,6 @@ const Tab = createBottomTabNavigator();
 export default function AppBottomNavigator() {
   return (
     <Tab.Navigator
-      // initialRouteName={routes.AUTH_STACK}
       screenOptions={{
         tabBarShowLabel: false,
         tabBarActiveTintColor: "red",

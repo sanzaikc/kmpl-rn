@@ -2,13 +2,10 @@ import React from "react";
 import { StyleSheet, Text } from "react-native";
 
 import Container from "../components/shared/Container";
+import ProductList from "../components/ProductList";
 
 export default function HomeScreen() {
-  return (
-    <Container>
-      <Text>Home Screen</Text>
-    </Container>
-  );
+  return <ProductList />;
 }
 
 const styles = StyleSheet.create({});
