@@ -7,7 +7,7 @@ import Container from "../shared/Container";
 export default function DetailSection({ children, name }) {
   return (
     <Box bg="white" p={4} mb={1}>
-      <HStack space={6} alignItems="center">
+      <HStack space={6} alignItems="flex-start">
         {name && (
           <Box
             _text={{
