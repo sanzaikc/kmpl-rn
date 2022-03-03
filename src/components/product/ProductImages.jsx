@@ -40,6 +40,7 @@ export default function ProductImages() {
           );
           setPagination(index + 1);
         }}
+        disableIntervalMomentum={true}
       />
       <Box position="absolute" bottom={2} bg="gray.800" px={2} rounded="full">
         <HStack>
