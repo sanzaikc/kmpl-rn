@@ -12,10 +12,16 @@ import {
   Center,
   Text as NText,
 } from "native-base";
+import { useNavigation } from "@react-navigation/native";
+import routes from "../navigator/routes";
 
 export default function ProductCard() {
+  const navigation = useNavigation();
   return (
-    <TouchableOpacity style={{ width: "100%" }}>
+    <TouchableOpacity
+      style={{ width: "100%" }}
+      onPress={() => navigation.navigate(routes.PRODUCT_DETAIL)}
+    >
       <Box
         bg="white"
         rounded="sm"

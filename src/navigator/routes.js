@@ -1,5 +1,6 @@
 export default Object.freeze({
   // Stacks
+  ROOT_STACK: "Root Stack",
   AUTH_STACK: "Auth Stack",
   HOME_STACK: "Home Stack",
 
@@ -8,4 +9,5 @@ export default Object.freeze({
   SIGN_UP: "Sign Up",
   HOME: "Home",
   CART: "Cart",
+  PRODUCT_DETAIL: "Product Detail",
 });

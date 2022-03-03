@@ -10,7 +10,7 @@ import routes from "./routes";
 
 const Tab = createBottomTabNavigator();
 
-export default function AppBottomNavigator() {
+export default function BottomTabNavigator() {
   return (
     <Tab.Navigator
       screenOptions={{
