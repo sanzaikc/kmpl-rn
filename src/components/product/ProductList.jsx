@@ -1,7 +1,7 @@
-import { View, Text, FlatList } from "react-native";
 import React from "react";
+import { View, Text, FlatList } from "react-native";
 
-import ProductCard from "./ProductCard";
+import ProductCard from "../product/ProductCard";
 
 const randomArray = Array.apply(null, { length: 7 }).map((x) => ({
   id: Math.random(),
@@ -12,11 +12,11 @@ export default function ProductList() {
     <FlatList
       data={randomArray}
       keyExtractor={({ id }) => id.toString()}
-      renderItem={(_) => (
+      renderItem={({ item }) => (
         <View
           style={{ width: "48.5%", marginHorizontal: 2, marginVertical: 5 }}
         >
-          <ProductCard />
+          <ProductCard product={item} />
         </View>
       )}
       numColumns={2}

@@ -1,5 +1,6 @@
 import React from "react";
 import { Image, Text, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import {
   VStack,
@@ -12,11 +13,12 @@ import {
   Center,
   Text as NText,
 } from "native-base";
-import { useNavigation } from "@react-navigation/native";
-import routes from "../navigator/routes";
 
-export default function ProductCard() {
+import routes from "../../navigator/routes";
+
+export default function ProductCard({ product }) {
   const navigation = useNavigation();
+
   return (
     <TouchableOpacity
       style={{ width: "100%" }}
@@ -60,7 +62,6 @@ export default function ProductCard() {
               py={0.5}
               _text={{
                 color: "warmGray.50",
-                fontWeight: "700",
                 fontSize: "xs",
               }}
             >
