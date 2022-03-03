@@ -23,6 +23,7 @@ export default function App() {
           <Stack.Screen
             name={routes.PRODUCT_DETAIL}
             component={ProductDetailScreen}
+            options={{ headerShown: false }}
           />
         </Stack.Navigator>
       </NavigationContainer>
