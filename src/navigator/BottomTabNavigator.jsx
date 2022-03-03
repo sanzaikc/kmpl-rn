@@ -2,9 +2,9 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import CartScreen from "../screens/CartScreen";
 import AuthStack from "./AuthStack";
-import HomeStack from "./HomeStack";
+import HomeScreen from "../screens/HomeScreen";
+import CartScreen from "../screens/CartScreen";
 
 import routes from "./routes";
 
@@ -19,10 +19,9 @@ export default function BottomTabNavigator() {
       }}
     >
       <Tab.Screen
-        name={routes.HOME_STACK}
-        component={HomeStack}
+        name={routes.HOME}
+        component={HomeScreen}
         options={{
-          headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons
               name="home-outline"
