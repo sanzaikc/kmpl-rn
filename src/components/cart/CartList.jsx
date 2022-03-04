@@ -10,7 +10,7 @@ const cartListFooterComponent = () => (
       <View style={{ flexGrow: 1 }}>
         <Input placeholder="Enter coupon code" />
       </View>
-      <Button colorScheme="primary" size="sm" px={4}>
+      <Button colorScheme="primary" variant="outline" size="sm" px={4}>
         Apply Coupon
       </Button>
     </HStack>
