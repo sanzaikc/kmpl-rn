@@ -42,7 +42,7 @@ export default function ProductDetailScreen() {
       <Box bg="white" px={4} py={2} justifyContent="flex-end">
         <HStack justifyContent="flex-end">
           <Box w="50%">
-            <Button colorScheme="rose">Add to Cart</Button>
+            <Button colorScheme="primary">Add to Cart</Button>
           </Box>
         </HStack>
       </Box>

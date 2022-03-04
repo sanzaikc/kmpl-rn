@@ -134,7 +134,7 @@ export default function SignInScreeen({ navigation }) {
           <Button
             mt="2"
             py={3}
-            colorScheme="rose"
+            colorScheme="primary"
             isLoading={loading}
             isLoadingText="Signing in..."
             _loading={{

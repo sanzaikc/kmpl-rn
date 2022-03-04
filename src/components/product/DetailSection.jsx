@@ -1,12 +1,11 @@
-import { Box, HStack } from "native-base";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Box, HStack } from "native-base";
 
-import Container from "../shared/Container";
+import HorizontalContainer from "../shared/HorizontalContainer";
 
 export default function DetailSection({ children, name }) {
   return (
-    <Box bg="white" p={4} mb={1}>
+    <HorizontalContainer>
       <HStack space={6} alignItems="flex-start">
         {name && (
           <Box
@@ -20,8 +19,6 @@ export default function DetailSection({ children, name }) {
         )}
         <Box flex={1}>{children}</Box>
       </HStack>
-    </Box>
+    </HorizontalContainer>
   );
 }
-
-const styles = StyleSheet.create({});

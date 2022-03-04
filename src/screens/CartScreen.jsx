@@ -1,14 +1,7 @@
-import { StyleSheet, Text } from "react-native";
 import React from "react";
 
-import Container from "../components/shared/Container";
+import CartList from "../components/cart/CartList";
 
 export default function CartScreen() {
-  return (
-    <Container>
-      <Text>Cart Screen</Text>
-    </Container>
-  );
+  return <CartList />;
 }
-
-const styles = StyleSheet.create({});
