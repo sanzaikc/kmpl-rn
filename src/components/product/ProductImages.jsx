@@ -42,9 +42,16 @@ export default function ProductImages() {
         }}
         disableIntervalMomentum={true}
       />
-      <Box position="absolute" bottom={2} bg="gray.800" px={2} rounded="full">
+      <Box
+        position="absolute"
+        bottom={2}
+        bg="gray.800"
+        px={2}
+        py={1}
+        rounded="full"
+      >
         <HStack>
-          <Text style={{ color: "lightgray", fontSize: 14 }}>
+          <Text style={{ color: "lightgray", fontSize: 12 }}>
             {pagination}/{randomArray.length}
           </Text>
         </HStack>

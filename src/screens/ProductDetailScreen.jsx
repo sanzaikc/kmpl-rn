@@ -1,13 +1,7 @@
 import React from "react";
-import { ScrollView, StyleSheet, View } from "react-native";
-import {
-  Box,
-  Button,
-  Heading,
-  HStack,
-  Text as NText,
-  VStack,
-} from "native-base";
+import { ScrollView, StyleSheet, TouchableOpacity, View } from "react-native";
+import { Box, Button, HStack, Text as NText, VStack } from "native-base";
+import { Ionicons } from "@expo/vector-icons";
 
 import ProductImages from "../components/product/ProductImages";
 import DetailSection from "../components/product/DetailSection";
@@ -28,7 +22,11 @@ export default function ProductDetailScreen() {
               >
                 TT$ 200
               </Box>
-              <Box>Icon</Box>
+              <TouchableOpacity>
+                <Box>
+                  <Ionicons name="heart-outline" size={24} color="gray" />
+                </Box>
+              </TouchableOpacity>
             </HStack>
             <HStack space={2}>
               <NText strikeThrough style={{ color: "gray" }}>
@@ -36,7 +34,6 @@ export default function ProductDetailScreen() {
               </NText>
               <Box _text={{ fontWeight: 200 }}>-20%</Box>
             </HStack>
-            <Box>Product Name here</Box>
           </VStack>
         </DetailSection>
         <DetailSection name="Specifications">Very Cool Product</DetailSection>
