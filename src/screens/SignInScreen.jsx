@@ -54,7 +54,7 @@ export default function SignInScreeen({ navigation }) {
   };
 
   return (
-    <Center h="100%" w="100%">
+    <Center h="100%" w="100%" bg="white">
       <Box safeArea p="2" py="8" w="90%">
         <Heading
           size="lg"
