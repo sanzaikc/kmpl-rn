@@ -10,7 +10,7 @@ const cartListFooterComponent = () => (
       <View style={{ flexGrow: 1 }}>
         <Input placeholder="Enter coupon code" />
       </View>
-      <Button colorScheme="primary" variant="outline" size="sm" px={4}>
+      <Button px={4} colorScheme="primary" variant="outline" size="sm" disabled>
         Apply Coupon
       </Button>
     </HStack>
@@ -21,7 +21,7 @@ export default function CartList() {
   return (
     <View style={{ flex: 1 }}>
       <FlatList
-        data={[1, 2, 3]}
+        data={[1, 2, 3, 4, 5, 6]}
         keyExtractor={(item) => item.toString()}
         renderItem={(_) => <CartItem />}
         ListFooterComponent={cartListFooterComponent}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, TouchableWithoutFeedback } from "react-native";
+import { Image, TouchableOpacity } from "react-native";
 import { Box, HStack } from "native-base";
 import { useNavigation } from "@react-navigation/native";
 
@@ -13,7 +13,7 @@ export default function CartItem() {
   return (
     <HorizontalContainer>
       <HStack>
-        <TouchableWithoutFeedback
+        <TouchableOpacity
           onPress={() => navigation.navigate(routes.PRODUCT_DETAIL)}
         >
           <Box h={20} w={20} rounded="sm" overflow="hidden">
@@ -29,7 +29,7 @@ export default function CartItem() {
               }}
             />
           </Box>
-        </TouchableWithoutFeedback>
+        </TouchableOpacity>
       </HStack>
     </HorizontalContainer>
   );
