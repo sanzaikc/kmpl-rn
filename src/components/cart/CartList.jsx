@@ -2,7 +2,7 @@ import React from "react";
 import { FlatList, View, ScrollView } from "react-native";
 import { Box, Button, Flex, HStack, Input, VStack } from "native-base";
 
-import HorizontalContainer from "../shared/HorizontalContainer";
+import CartItem from "./CartItem";
 
 const cartListFooterComponent = () => (
   <Box px={4} py={2} bg="white">
@@ -23,7 +23,7 @@ export default function CartList() {
       <FlatList
         data={[1, 2, 3]}
         keyExtractor={(item) => item.toString()}
-        renderItem={(_) => <HorizontalContainer>Cart Item</HorizontalContainer>}
+        renderItem={(_) => <CartItem />}
         ListFooterComponent={cartListFooterComponent}
       />
       <Box px={4} py={2} bg="white">

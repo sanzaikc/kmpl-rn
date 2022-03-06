@@ -35,6 +35,7 @@ export default function BottomTabNavigator() {
         name={routes.CART}
         component={CartScreen}
         options={{
+          headerTitle: "My Cart",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons
               name="cart-outline"
