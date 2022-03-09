@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import HorizontalContainer from "../shared/HorizontalContainer";
 
-import routes from "../../navigator/routes";
+import routes from "../../navigations/routes";
 
 export default function CartItem() {
   const navigation = useNavigation();

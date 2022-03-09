@@ -14,7 +14,7 @@ import {
   Text as NText,
 } from "native-base";
 
-import routes from "../../navigator/routes";
+import routes from "../../navigations/routes";
 
 export default function ProductCard({ product }) {
   const navigation = useNavigation();
